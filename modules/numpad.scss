@@ -1,0 +1,125 @@
+@use "./../partials/palette";
+
+.carrot {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.top {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 24px 0 35px;
+}
+
+.brand {
+    margin-bottom: 15px;
+}
+
+.line {
+    border-bottom: 4px solid rgb(247, 247, 247);
+    width: 27px;
+    height: 18px;
+    border-radius: 30px;
+    margin-top: -22px;
+    margin-left: 48px;
+}
+
+.screen {
+    width: 280px;
+    height: 70px;
+    background-color: palette.$grey;
+    border-left: 3px solid palette.$darkgrey;
+    border-top: 3px solid palette.$darkgrey;
+    border-right: 2px solid palette.$darkgrey;
+    border-bottom: 2px solid palette.$darkgrey;
+    border-radius: 10px;
+}
+
+.middle {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    column-gap: 10px;
+    row-gap: 8px;
+    margin-bottom: 30px;
+    align-items: center;
+    justify-items: center;
+}
+
+.functions {
+    width: 50px;
+    height: 22px;
+    padding: 2px 0 0 0;
+    border-radius: 25px;
+    background-color: palette.$white;
+    border-top: 2px solid palette.$redorange;
+    border-right: 2px solid palette.$redorange;
+    border-left: 1px solid palette.$redorange;
+    border-bottom: 1px solid palette.$redorange;
+
+    &:active {
+        background-color: palette.$off-white;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}
+
+#onBtn {
+    grid-row: 1 / span 2;
+    height: 48px;
+    border-radius: 24px 10px 10px;
+    word-wrap: break-word;
+}
+
+.bottom {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+}
+
+.quarter {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    margin: 0 auto 2%;
+    justify-items: center;
+    align-items: center;
+
+    &--first {
+        width: 85%;
+    }
+
+    &--second {
+        width: 80%;
+    }
+
+    &--third {
+        width: 75%;
+    }
+
+    &--fourth {
+        width: 70%;
+    }
+}
+
+.num-pad {
+    background-color: palette.$orange;
+    border-top: 2px solid palette.$darkorange;
+    border-left: 2px solid palette.$darkorange;
+    border-right: 1px solid palette.$darkorange;
+    border-bottom: 1px solid palette.$darkorange;
+    height: 42px;
+    width: 50px;
+    border-radius: 20% 20% 60% 60%;
+
+    &:active {
+        background-color: palette.$darkorange;
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+}

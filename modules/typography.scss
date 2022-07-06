@@ -1,0 +1,56 @@
+@use "./../partials/palette";
+
+* {
+    font-family: scandia-web, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+h2 {
+    font-weight: 700;
+    font-size: 34px;
+    letter-spacing: -2;
+    color: palette.$white;
+}
+
+.char {
+    font-size: 24px;
+    font-weight: 400;
+    vertical-align: text-top;
+}
+
+.model {
+    color: palette.$white;
+    font-size: 16px;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.calculation {
+    display: inline-block;
+    width: inherit;
+    height: inherit;
+    text-align: right;
+    vertical-align: bottom;
+    font-size: 55px;
+    color: palette.$darkgrey;
+}
+
+.functions {
+    &--text {
+        vertical-align: middle;
+        font-family: ocr-a-std, monospace;
+        font-weight: 400;
+        font-style: normal;
+        font-size: 16px;
+        text-align: center;
+        color: palette.$orange;
+    }
+}
+
+.num-pad {
+    font-size: 28px;
+    text-align: center;
+    font-weight: 400;
+    color: palette.$white;
+}

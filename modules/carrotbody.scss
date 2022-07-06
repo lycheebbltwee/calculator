@@ -1,0 +1,47 @@
+@use "./../partials/palette";
+
+html {
+    height: 100vh;
+    background-image: linear-gradient(#f4a5a0, #f9e8de);
+}
+
+.leaf {
+    display: flex;
+    justify-content: center;
+    align-items: flex-end;
+    margin-top: 120px;
+    margin-bottom: -20px;
+    position: relative;
+    z-index: -1;
+}
+
+.left-leaf {
+    height: 150px;
+    width: 120px;
+    background-image: linear-gradient(
+        150deg,
+        palette.$green 55%,
+        palette.$yellowgreen
+    );
+    border-radius: 40% 80% 20% 80%;
+}
+
+.right-leaf {
+    height: 120px;
+    width: 90px;
+    background-image: linear-gradient(
+        -150deg,
+        palette.$green 55%,
+        palette.$yellowgreen
+    );
+    border-radius: 60% 40% 60% 20%;
+    margin-left: -5px;
+}
+
+.carrot {
+    margin: 0 auto;
+    background-image: linear-gradient(palette.$orange, palette.$redorange);
+    height: 550px;
+    width: 400px;
+    border-radius: 28% 28% 45% 45%;
+}
