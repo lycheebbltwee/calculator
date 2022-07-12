@@ -12,6 +12,9 @@ const numBtns = document.querySelectorAll(".numpad__input--num");
 const onBtn = document.getElementById("onBtn");
 const offBtn = document.getElementById("offBtn");
 const opBtns = document.querySelectorAll(".numpad__input--ops");
+const percBtn = document.getElementById("percBtn");
+const sqrtBtn = document.getElementById("sqrtBtn");
+const deleteBtn = document.getElementById("deleteBtn");
 
 // FUNCTIONS
 // Reset to zero
@@ -50,7 +53,10 @@ const numPress = (num) => {
         }
     } else if (num) {
         // If a number is entered
-        if (!displayScreen.innerText == "") {
+        if (
+            !displayScreen.innerText == "" &&
+            displayScreen.innerText.length < 10
+        ) {
             // If the display is not empty
             changeText(displayScreen, displayScreen.innerText + num);
             // Concatenate that number onto the displayed number
@@ -79,16 +85,9 @@ const mathOp = () => {
 };
 
 // EVENT LISTENERS
-// Turn calculator 'on'
+// Turn calculator 'on' or reset values
 onBtn.addEventListener("click", () => {
     resetZero();
-});
-
-// Turn calculator 'off'
-offBtn.addEventListener("click", () => {
-    if (displayScreen !== "") {
-        changeText(displayScreen, "");
-    }
 });
 
 // Displays value of number button
@@ -102,8 +101,44 @@ numBtns.forEach((numBtn) => {
 // Displays value of number button
 opBtns.forEach((opBtn) => {
     opBtn.addEventListener("click", () => {
+        // 1. CSS focus on selected operator
+        opBtn.focus();
+
+        // 2. Execute calculation
         mathOp();
+
+        // 3. Store operator
         currentOperator = opBtn.innerText;
-        console.log(currentOperator);
+
+        // console.log(currentOperator);
     });
+});
+
+// SPECIAL EVENT LISTENERS
+// Turn calculator 'off'
+offBtn.addEventListener("click", () => {
+    if (displayScreen !== "") {
+        changeText(displayScreen, "");
+    }
+});
+
+// Converts current display to a percentage value
+percBtn.addEventListener("click", () => {
+    changeText(displayScreen, displayScreen.innerText / 100);
+});
+
+// Finds the square root of the currently displayed value
+sqrtBtn.addEventListener("click", () => {
+    const square = Math.sqrt(displayScreen.innerText);
+
+    String(square).length > 10
+        ? changeText(displayScreen, square.toPrecision(10))
+        : changeText(displayScreen, square);
+});
+
+// Removes last value of string
+deleteBtn.addEventListener("click", () => {
+    displayScreen.innerText.length === 1
+        ? changeText(displayScreen, "0") //
+        : changeText(displayScreen, displayScreen.innerText.slice(0, -1));
 });

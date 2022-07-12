@@ -37,10 +37,30 @@ I broke down the various tasks within a calculator to abstract the challenge and
 ### Coding Logic
 
 -   ON/AC changes display to 0 and/or resets any stored values.
--   Off button turns off operation
+-   Off button turns off operation (i.e., numbers should not be displayed upon click)
 -   Numbers output to the screen through EventListeners
+    -   Numbers should concatenate to the current display
 -   Operators work
 -   Equals button executes math equation
-    -   Can handle decimals
--   If display exceeds 10 characters, convert to exponential notation
--   Memory functions (optional)
+    -   Can handle decimals (only can have one decimal point)
+-   Display cannot exceed 10 characters
+
+### Reflection
+
+Some challenges I faced were:
+
+-   Concatenating number presses to the display
+    -   I had to make use of the browser console to make sure I was selecting the correct element.
+-   Adding numbers resulted in concatenation
+    -   I addressed this by converting the displayed numbers to the number type, and made sure to return back as a string
+-   Numbers could still be inputted when display is "off"
+    -   I was having a lot of trouble finding the correct expression to stop this from happening, but I eventually resolved this through creating a falsy condition.
+
+### Additional functions to add
+
+-   Complex calculations using memory functions (optional)
+    -   Storing result in a memory variable
+    -   Adding (or subtracting) current value to (or from) the memory value (M+/M-)
+    -   Display the value stored in memory (MRC)
+    -   Pressing MRC twice will clear memory (need a counter)
+-   When equals is clicked twice, increment the value by the previous operand

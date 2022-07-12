@@ -12,15 +12,21 @@ export const calculate = (stored, current, operator) => {
     switch (operator) {
         case "+":
             result = Number(stored) + Number(current);
-            return result.toString();
+            break;
         case "−":
             result = Number(stored) - Number(current);
-            return result.toString();
+            break;
         case "÷":
-            return (result = stored / current);
+            result = Number(stored) / Number(current);
+            break;
         case "×":
-            return (result = stored * current);
+            result = Number(stored) * Number(current);
+            break;
         default:
             return (result = current);
     }
+
+    return String(result).length > 10
+        ? String(result.toPrecision(10))
+        : String(result);
 };
