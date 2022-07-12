@@ -32,13 +32,15 @@ Inside these sections I used display:flex and display:grid to recreate the layou
 
 ## JavaScript
 
-When thinking about the functionality of a calculator, perhaps these are the functions I will need to code:
+I broke down the various tasks within a calculator to abstract the challenge and make it more manageable to solve:
 
--   ON/AC turns on calculator and clears display (twice for reset operation)
+### Coding Logic
+
+-   ON/AC changes display to 0 and/or resets any stored values.
 -   Off button turns off operation
--   Numbers output to the screen
+-   Numbers output to the screen through EventListeners
 -   Operators work
 -   Equals button executes math equation
     -   Can handle decimals
--   If number output cannot fit the screen, text size will decrease
+-   If display exceeds 10 characters, convert to exponential notation
 -   Memory functions (optional)

@@ -31,8 +31,7 @@ h2 {
     width: inherit;
     height: inherit;
     text-align: right;
-    vertical-align: bottom;
-    font-size: 55px;
+    font-size: 48px;
     color: palette.$darkgrey;
 }
 
@@ -53,4 +52,11 @@ h2 {
     text-align: center;
     font-weight: 400;
     color: palette.$white;
+}
+
+footer {
+    margin-top: 3rem;
+    text-align: center;
+    font-size: 18px;
+    color: #e72348;
 }

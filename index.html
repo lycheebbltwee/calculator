@@ -9,6 +9,7 @@
         />
         <link rel="stylesheet" href="styles.css" />
         <link rel="stylesheet" href="https://use.typekit.net/wsr2uha.css" />
+        <script type="module" src="./scripts/script.js" defer></script>
         <title>Carrot Calculator</title>
     </head>
     <body>
@@ -26,7 +27,7 @@
                     <p class="model">BT&#8211;7838</p>
                 </div>
                 <div class="screen">
-                    <span class="calculation">07734</span>
+                    <span class="calculation"></span>
                 </div>
             </div>
 
@@ -35,46 +36,109 @@
                 <button class="functions" id="onBtn">
                     <span class="functions--text">ON /AC</span>
                 </button>
-                <button class="functions"><span class="functions--text">&percnt;</span></button>
-                <button class="functions"><span class="functions--text">&Sqrt;</span></button>
-                <button class="functions"><span class="functions--text">&#8594;</span></button>
-                <button class="functions"><span class="functions--text">OFF</span></button>
-                <button class="functions"><span class="functions--text">GT</span></button>
-                <button class="functions"><span class="functions--text">MRC</span></button>
-                <button class="functions"><span class="functions--text">M&minus;/<span></button>
-                <button class="functions"><span class="functions--text">M&plus;</span></button>
+                <button class="functions">
+                    <span class="functions--text">&percnt;</span>
+                </button>
+                <button class="functions">
+                    <span class="functions--text">&Sqrt;</span>
+                </button>
+                <button class="functions">
+                    <span class="functions--text">&#8594;</span>
+                </button>
+                <button class="functions" id="offBtn">
+                    <span class="functions--text">OFF</span>
+                </button>
+                <button class="functions">
+                    <span class="functions--text">GT</span>
+                </button>
+                <button class="functions">
+                    <span class="functions--text">MRC</span>
+                </button>
+                <button class="functions">
+                    <span class="functions--text">M&minus;</span>
+                </button>
+                <button class="functions">
+                    <span class="functions--text">M&plus;</span>
+                </button>
             </div>
 
             <!-- Bottom third with numbers and obuttonerators -->
             <div class="bottom">
                 <div class="quarter quarter--first">
-                    <button class="num-pad">7</button>
-                    <button class="num-pad">8</button>
-                    <button class="num-pad">9</button>
-                    <button class="num-pad">&divide;</button>
+                    <button id="seven" class="num-pad numpad__input--num">
+                        7
+                    </button>
+                    <button id="eight" class="num-pad numpad__input--num">
+                        8
+                    </button>
+                    <button id="nine" class="num-pad numpad__input--num">
+                        9
+                    </button>
+                    <button
+                        id="div"
+                        class="num-pad num-pad--focus numpad__input--ops"
+                    >
+                        &divide;
+                    </button>
                 </div>
 
                 <div class="quarter quarter--second">
-                    <button class="num-pad">4</button>
-                    <button class="num-pad">5</button>
-                    <button class="num-pad">6</button>
-                    <button class="num-pad">&times;</button>
+                    <button id="four" class="num-pad numpad__input--num">
+                        4
+                    </button>
+                    <button id="five" class="num-pad numpad__input--num">
+                        5
+                    </button>
+                    <button id="six" class="num-pad numpad__input--num">
+                        6
+                    </button>
+                    <button
+                        id="mult"
+                        class="num-pad num-pad--focus numpad__input--ops"
+                    >
+                        &times;
+                    </button>
                 </div>
 
                 <div class="quarter quarter--third">
-                    <button class="num-pad">1</button>
-                    <button class="num-pad">2</button>
-                    <button class="num-pad">3</button>
-                    <button class="num-pad">&minus;</button>
+                    <button id="one" class="num-pad numpad__input--num">
+                        1
+                    </button>
+                    <button id="two" class="num-pad numpad__input--num">
+                        2
+                    </button>
+                    <button id="three" class="num-pad numpad__input--num">
+                        3
+                    </button>
+                    <button
+                        id="min"
+                        class="num-pad num-pad--focus numpad__input--ops"
+                    >
+                        &minus;
+                    </button>
                 </div>
 
                 <div class="quarter quarter--fourth">
-                    <button class="num-pad">0</button>
-                    <button class="num-pad">&period;</button>
-                    <button class="num-pad">&equals;</button>
-                    <button class="num-pad">&plus;</button>
+                    <button id="zero" class="num-pad numpad__input--num">
+                        0
+                    </button>
+                    <button id="dot" class="num-pad numpad__input--num">
+                        &period;
+                    </button>
+                    <button id="equ" class="num-pad numpad__input--ops">
+                        &equals;
+                    </button>
+                    <button
+                        id="plus"
+                        class="num-pad num-pad--focus numpad__input--ops"
+                    >
+                        &plus;
+                    </button>
                 </div>
             </div>
         </div>
+        <footer>
+            <p>Built by Anh Thuy Nguyen.</p>
+        </footer>
     </body>
 </html>
