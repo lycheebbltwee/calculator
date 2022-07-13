@@ -63,4 +63,5 @@ Some challenges I faced were:
     -   Adding (or subtracting) current value to (or from) the memory value (M+/M-)
     -   Display the value stored in memory (MRC)
     -   Pressing MRC twice will clear memory (need a counter)
+-   GT button to store the grand total of previous calculations
 -   When equals is clicked twice, increment the value by the previous operand

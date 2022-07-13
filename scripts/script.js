@@ -6,6 +6,10 @@ let stored = 0;
 let currentOperator = "=";
 let inputNewNum = false;
 
+// Special storage variables
+let grandTotal = 0;
+let memoryRecall = 0;
+
 // Variables for DOM objects
 const displayScreen = document.querySelector(".calculation");
 const numBtns = document.querySelectorAll(".numpad__input--num");
@@ -15,6 +19,7 @@ const opBtns = document.querySelectorAll(".numpad__input--ops");
 const percBtn = document.getElementById("percBtn");
 const sqrtBtn = document.getElementById("sqrtBtn");
 const deleteBtn = document.getElementById("deleteBtn");
+const gtBtn = document.getElementById("gtBtn");
 
 // FUNCTIONS
 // Reset to zero
@@ -78,6 +83,11 @@ const mathOp = () => {
     // 4. Store result
     stored = result;
 
+    if (currentOperator !== "=") {
+        grandTotal += Number(result);
+        String(grandTotal);
+    }
+
     // 5. Allow next value to be created
     inputNewNum = true;
 
@@ -120,6 +130,9 @@ offBtn.addEventListener("click", () => {
     if (displayScreen !== "") {
         changeText(displayScreen, "");
     }
+
+    stored = 0;
+    grandTotal = 0;
 });
 
 // Converts current display to a percentage value
@@ -141,4 +154,9 @@ deleteBtn.addEventListener("click", () => {
     displayScreen.innerText.length === 1
         ? changeText(displayScreen, "0") //
         : changeText(displayScreen, displayScreen.innerText.slice(0, -1));
+});
+
+// Displays grand total of the previous calculations
+gtBtn.addEventListener("click", () => {
+    changeText(displayScreen, grandTotal);
 });
