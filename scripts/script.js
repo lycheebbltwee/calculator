@@ -9,6 +9,7 @@ let inputNewNum = false;
 // Special storage variables
 let grandTotal = 0;
 let memoryRecall = 0;
+let mrcCount = 0;
 
 // Variables for DOM objects
 const displayScreen = document.querySelector(".calculation");
@@ -185,6 +186,12 @@ memMinusBtn.addEventListener("click", () => {
 
 // Displays memory total
 mrcBtn.addEventListener("click", () => {
-    changeText(displayScreen, memoryRecall);
-    console.log(`Currently displaying value in memory: ${memoryRecall}`);
+    mrcCount += 1;
+    if (mrcCount >= 1) {
+        memoryRecall = 0;
+        mrcCount = 0;
+    } else {
+        changeText(displayScreen, memoryRecall);
+        console.log(`Currently displaying value in memory: ${memoryRecall}`);
+    }
 });
