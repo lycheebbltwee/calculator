@@ -20,6 +20,9 @@ const percBtn = document.getElementById("percBtn");
 const sqrtBtn = document.getElementById("sqrtBtn");
 const deleteBtn = document.getElementById("deleteBtn");
 const gtBtn = document.getElementById("gtBtn");
+const mrcBtn = document.getElementById("mrcBtn");
+const memMinusBtn = document.getElementById("memMinusBtn");
+const memPlusBtn = document.getElementById("memPlusBtn");
 
 // FUNCTIONS
 // Reset to zero
@@ -86,6 +89,9 @@ const mathOp = () => {
     if (currentOperator !== "=") {
         grandTotal += Number(result);
         String(grandTotal);
+        console.log(
+            `Added ${displayScreen.innerText} to Grand Total (GT). Current value in GT: ${grandTotal}`,
+        );
     }
 
     // 5. Allow next value to be created
@@ -159,4 +165,26 @@ deleteBtn.addEventListener("click", () => {
 // Displays grand total of the previous calculations
 gtBtn.addEventListener("click", () => {
     changeText(displayScreen, grandTotal);
+});
+
+// Adds value to memory
+memPlusBtn.addEventListener("click", () => {
+    memoryRecall += Number(displayScreen.innerText);
+    console.log(
+        `Added ${displayScreen.innerText} to memory. Current value in memory: ${memoryRecall}`,
+    );
+});
+
+// Subtracts value from memory
+memMinusBtn.addEventListener("click", () => {
+    memoryRecall -= Number(displayScreen.innerText);
+    console.log(
+        `Subtracted ${displayScreen.innerText} to memory. Current value in memory: ${memoryRecall}`,
+    );
+});
+
+// Displays memory total
+mrcBtn.addEventListener("click", () => {
+    changeText(displayScreen, memoryRecall);
+    console.log(`Currently displaying value in memory: ${memoryRecall}`);
 });
