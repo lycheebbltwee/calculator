@@ -30,45 +30,43 @@ const memPlusBtn = document.getElementById("memPlusBtn");
 const resetZero = () => {
     changeText(displayScreen, 0);
     stored = 0;
+    grandTotal = 0;
 };
 
 // Display number
 const numPress = (num) => {
-    if (inputNewNum === true) {
-        // If a new number input has started
-        if (num === ".") {
-            // Display "0." if decimal is entered
-            changeText(displayScreen, "0.");
-        } else {
-            // Display num
-            changeText(displayScreen, num);
-        }
+    if (inputNewNum === true || displayScreen.innerText === "0") {
+        /*  
+        If a new number input has started or the display is "0"...
+        ... Display "0." if decimal is entered or...
+        ... Display num
+         */
+
+        num === "."
+            ? changeText(displayScreen, "0.")
+            : changeText(displayScreen, num);
         inputNewNum = false;
-    } else if (displayScreen.innerText === "0") {
-        // If current display is zero
-        if (num === ".") {
-            // Display "0." if decimal is entered
-            changeText(displayScreen, "0.");
-        } else {
-            // Display num
-            changeText(displayScreen, num);
-        }
     } else if (num === ".") {
-        // If decimal point is entered
+        /* 
+        If decimal point is entered...
+        ... Concatenate decimal point if there isn't one already
+        */
+
         if (!displayScreen.innerText.includes(".")) {
-            // If there isn't already a decimal point
             changeText(displayScreen, displayScreen.textContent + num);
-            // Concatenate a decimal point onto the currently displayed number
         }
     } else if (num) {
-        // If a number is entered
+        /* 
+        If a number is entered...
+        ... Concatenate the numbere onto the display if display isn't empty 
+        ... AND is under 10 characters
+        */
+
         if (
             !displayScreen.innerText == "" &&
             displayScreen.innerText.length < 10
         ) {
-            // If the display is not empty
             changeText(displayScreen, displayScreen.innerText + num);
-            // Concatenate that number onto the displayed number
         }
     }
 };

@@ -27,6 +27,6 @@ export const calculate = (stored, current, operator) => {
     }
 
     return String(result).length > 10
-        ? String(result.toPrecision(10))
+        ? String(result.toPrecision(6))
         : String(result);
 };
