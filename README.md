@@ -2,6 +2,8 @@
 
 A project to implement a calculator using HTML, CSS, and JavaScript.
 
+<img alt="May be a carrot-themed calculator" src="./reference-images/development-project-01" height="400">
+
 The calculator that I will be replicating looks like this:
 
 <figure>
