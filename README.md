@@ -20,17 +20,17 @@ In thinking about how to recreate this design, I first decided to sketch up a ba
     <figcaption> A draft of my HTML layout.</figcaption>
 </figure>
 
-Having a sketch of the calculator's layout was helpful in giving me a general idea of how to break down the different parts and sections.
+While the sketch is quite rough, it was very helpful to physically draw out the structure of how to approach this problem of recreating such a complicated shape. I found that choosing such a complex shape would be a good challenge for me and a good place to practise more creating complex CSS.
 
 ## HTML & CSS
 
-When writing the HTML for this calculator, I followed the sketch I drew up. I grouped similar visual elements with class names. For this project, I decided to mainly use non-semantic tags over semantic tags because there wasn't a need to to have meaningful elements, especially when creating visuals using CSS. The main semantic tag I used was the button tag for the actual calculator buttons.
+When I was writing the HTML for this calculator, the process was much easier because of my prior planning. I decided to mainly use non-semantic tags over semantic tags because there wasn't a need to to have meaningful elements, especially when creating visuals using CSS. The main semantic tag I used was the button tag for the actual calculator buttons.
 
-For the stylesheet, I used SCSS to take advantage of using partials and modules, as well as the BEM naming convention to create different modifiers.
+For the stylesheet, I used SCSS to take advantage of using partials and modules, as well as the BEM naming convention to create different modifiers and to enhance the readability of my code.
 
-I utilised the border-radius property to create the shape of the carrot, which I believe produced the best result. Within the carrot, I created three divs to separate the different sections of the calculator which each had their own layout.
+To tackle the complexity of the carrot-shape, I had to do a lot of experimenting with different values for the CSS property: border-radius to achieve the design goals, as I had previously watched videos of CSS battles where border-radius was used to create round shapes. While I was unable to replicate the shape exactly, I believe that I was able to create a close representation.
 
-Inside these sections I used display:flex and display:grid to recreate the layout of a calculator. In doing this, I had to often adjust my HTML to get the result I wanted. An example of this is in the bottom section which consists of the numbered buttons. When I sketched out the layout, I initially thought a grid container of twelve divs would be the best solution, and perhaps it would have been the simplest solution, from a practical standpoint. However, I really wanted to replicate the cascading effect of the buttons, so I made the necessary adjustments to create it.
+I initially placed all twelve numbered and operation buttons of the calculator inside of a singular div, as I had sketched out. But I was very determined to replicate even the finer details, so I made the appropriate changes in my HTML to recreate the cascading effect of the numpad, which in hindsight may have not been the most practical solution, but it was necessary for the aesthetic goals I had in mind.
 
 ## JavaScript
 
@@ -58,7 +58,7 @@ Some challenges I faced were:
 -   Numbers could still be inputted when display is "off"
     -   I was having a lot of trouble finding the correct expression to stop this from happening, but I eventually resolved this through creating a falsy condition.
 
-### Additional functions to add
+### Additional functions to add (Completed)
 
 -   Complex calculations using memory functions (optional)
     -   Storing result in a memory variable
@@ -66,4 +66,9 @@ Some challenges I faced were:
     -   Display the value stored in memory (MRC)
     -   Pressing MRC twice will clear memory (need a counter)
 -   GT button to store the grand total of previous calculations
--   When equals is clicked twice, increment the value by the previous operand
+
+## Project Reflection
+
+I felt that this project was a good opportunity to practise Javascript and how to interact with the DOM. As I have had previous experience with HTML and CSS, I was really excited to dive into writing my own Javascript, instead of outsourcing scripts.
+
+Coming into Javascript with beginner-level Python knowledge, I was able to approach this problem with similar kind of problem solving. However, I still need to continue practising to abstract the different parts of a problem, further breaking down processes and slowly writing the program to achieve these smaller tasks.

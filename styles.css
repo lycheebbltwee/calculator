@@ -4,7 +4,7 @@
 }
 
 * {
-  font-family: scandia-web, sans-serif;
+  font-family: interstate-mono, monospace;
   font-weight: 400;
   font-style: normal;
 }
@@ -14,12 +14,15 @@ h2 {
   font-size: 34px;
   letter-spacing: -2;
   color: rgb(247, 247, 247);
+  font-family: scandia-web, sans-serif;
+  font-style: normal;
 }
 
 .char {
   font-size: 24px;
   font-weight: 400;
   vertical-align: text-top;
+  font-family: scandia-web, sans-serif;
 }
 
 .model {
@@ -30,11 +33,11 @@ h2 {
 }
 
 .calculation {
-  display: inline-block;
-  width: inherit;
-  height: inherit;
+  display: block;
+  margin: auto;
+  width: 92%;
   text-align: right;
-  font-size: 48px;
+  font-size: 44px;
   color: rgb(56, 62, 52);
 }
 
@@ -127,15 +130,17 @@ html {
 }
 
 .screen {
-  width: 280px;
-  height: 70px;
+  width: 290px;
+  height: 75px;
   background-color: rgb(153, 168, 143);
   border-left: 3px solid rgb(56, 62, 52);
   border-top: 3px solid rgb(56, 62, 52);
   border-right: 2px solid rgb(56, 62, 52);
   border-bottom: 2px solid rgb(56, 62, 52);
   border-radius: 10px;
-  padding: 5px 10px 0 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .middle {

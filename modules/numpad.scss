@@ -27,15 +27,17 @@
 }
 
 .screen {
-    width: 280px;
-    height: 70px;
+    width: 290px;
+    height: 75px;
     background-color: palette.$grey;
     border-left: 3px solid palette.$darkgrey;
     border-top: 3px solid palette.$darkgrey;
     border-right: 2px solid palette.$darkgrey;
     border-bottom: 2px solid palette.$darkgrey;
     border-radius: 10px;
-    padding: 5px 10px 0 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .middle {
